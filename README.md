@@ -84,5 +84,3 @@ We welcome contributions and new ideas to expand the project! Some ideas for fut
 - **Performance Upgrades**: Using a more powerful microcontroller or edge-AI device to further reduce inference latency.
 - **Expanded Sound Profiles**: Creating a larger model with dedicated labels to distinctively classify other critical sounds (e.g., isolating a "car horn" class instead of grouping it in traffic).
 - **Internationalization**: Expanding the training dataset to include international sirens (e.g., US, UK, France) for a globally applicable model.
-- **Smart City Integration**: Syncing detection telemetry to the cloud to map emergency vehicle routes in real-time and optimize smart traffic light controls.
-- **Ultra Low-Power Wake Words**: Implementing a basic analog sound trigger or an ultra-tiny cascade model to keep the main classifier in deep sleep, massively extending battery life for portable use.
