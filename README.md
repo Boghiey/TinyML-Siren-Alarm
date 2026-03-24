@@ -29,13 +29,15 @@ The system captures audio signals, classifies them as “siren” or “non-sire
 - Arduino IDE  
 
 ## Dataset
-A custom dataset was created due to the lack of suitable existing datasets.
+A custom dataset was created due to the lack of suitable existing datasets.  
+**Note:** The model was currently trained specifically on **German emergency sirens**.
+
 The dataset contains three types of audio recordings:
 - Sirens (emergency vehicles in Germany)
 - Traffic (cars, road noise, horns)
 - Voices (conversations, music, podcasts)
 
-These additional sound categories were intentionally included to represent realistic environmental noise and improve the robustness of the model.
+These additional sound categories were intentionally included to represent realistic environmental noise and improve the robustness of the model. Notably, because car horns are explicitly grouped under the "Traffic" category, the model is highly resistant to false positives from honking cars.
 
 ## Model
 Although the dataset consists of multiple sound categories, the task is formulated as a **binary classification problem**:
@@ -73,3 +75,14 @@ The model was developed using Edge Impulse
 - **Model Efficiency & Reusability**: Despite its small size, the model performs very well. It can easily be rebuilt, retrained, and reused using the same label structure.
 - **Latency**: The real-time detection window takes approximately `1 second` to evaluate the audio and output a classification result.
 - **Versatility**: The hardware prototype is extremely lightweight and portable. It can be used as an assistance system inside a car, attached to a bicycle, or even carried by pedestrians while walking.
+
+## Future Work & Contribution Ideas
+We welcome contributions and new ideas to expand the project! Some ideas for future development include:
+
+- **Directional Detection**: Adding multiple microphones to calculate sound vectors and detect the exact direction an emergency vehicle is approaching from.
+- **Accessibility Warnings**: Integrating the system into wearables (smart glasses, smartwatches) to provide visual or haptic feedback, allowing people with hearing disabilities to receive clear, immediate warnings.
+- **Performance Upgrades**: Using a more powerful microcontroller or edge-AI device to further reduce inference latency.
+- **Expanded Sound Profiles**: Creating a larger model with dedicated labels to distinctively classify other critical sounds (e.g., isolating a "car horn" class instead of grouping it in traffic).
+- **Internationalization**: Expanding the training dataset to include international sirens (e.g., US, UK, France) for a globally applicable model.
+- **Smart City Integration**: Syncing detection telemetry to the cloud to map emergency vehicle routes in real-time and optimize smart traffic light controls.
+- **Ultra Low-Power Wake Words**: Implementing a basic analog sound trigger or an ultra-tiny cascade model to keep the main classifier in deep sleep, massively extending battery life for portable use.
