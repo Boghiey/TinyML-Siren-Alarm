@@ -1,4 +1,4 @@
-# Emergency Vehicle Siren Detection (TinyML Siren Detector)
+# TinyML Siren Alarm
 ## Overview
 This project aims to detect emergency vehicle sirens (e.g., ambulance, police, fire truck) in real-time using a TinyML model deployed on an embedded device.
 
